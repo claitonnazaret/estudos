@@ -1,47 +1,28 @@
 module.exports = {
-  env: {
-    browser: true,
-    es6: true,
-  },
+  parser: "@typescript-eslint/parser", // Specifies the ESLint parser
   extends: [
-    'plugin:react/recommended',
-    'airbnb',
-    'prettier',
-    'plugin:import/errors',
-    'plugin:import/warnings'
+    "plugin:react/recommended", // Uses the recommended rules from @eslint-plugin-react
+    "plugin:@typescript-eslint/recommended", // Uses the recommended rules from the @typescript-eslint/eslint-plugin
+    "prettier", // Uses eslint-config-prettier to disable ESLint rules from @typescript-eslint/eslint-plugin that would conflict with prettier
+    "plugin:prettier/recommended", // Enables eslint-plugin-prettier and eslint-config-prettier. This will display prettier errors as ESLint errors. Make sure this is always the last configuration in the extends array.
   ],
-  "settings": {
-    "import/resolver": {
-      "node": {
-        "extensions": [".js", ".jsx", ".ts", ".tsx"]
-      }
-    }
-  },
-  parser: '@typescript-eslint/parser',
   parserOptions: {
-    ecmaFeatures: {
-      jsx: true,
-    },
-    ecmaVersion: 'latest',
-    sourceType: 'module',
+    ecmaVersion: 2018, // Allows for the parsing of modern ECMAScript features
+    sourceType: "module", // Allows for the use of imports
   },
-  plugins: [
-    'react',
-    '@typescript-eslint',
-    'prettier'
-  ],
   rules: {
-    'prettier/prettier': 'warn',
-    'react/jsx-filename-extension': ['warn', { extensions: ['.jsx', '.js'] }],
-    'import/prefer-default-export': 'off',
-    'no-param-reassign': 'off',
-    'no-console': 'off',
-    'react/prop-types': 'off',
-    'react/no-array-index-key': 'warn',
-    'no-nested-ternary': 'off',
-    'react/jsx-props-no-spreading': 0,
-    'no-unused-vars': 'warn',
-    'consistent-return': 'off',
-    'arrow-body-style': 'warn',
+    semi: "error",
+    camelcase: "warn",
+    "react/prop-types": "off",
+    "no-undef": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "react/display-name": "off",
+    "@typescript-eslint/no-var-requires": 0,
+    "@typescript-eslint/ban-ts-ignore": "off",
+  },
+  settings: {
+    react: {
+      version: "detect", // Tells eslint-plugin-react to automatically detect the version of React to use
+    },
   },
 };
