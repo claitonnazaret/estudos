@@ -10,12 +10,12 @@ module.exports = {
     'plugin:import/errors',
     'plugin:import/warnings'
   ],
-  settings: {
-    'import/resolver': {
-      node: {
-        moduleDirectory: ['node_modules', 'src/'],
-      },
-    },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
   },
   parser: '@typescript-eslint/parser',
   parserOptions: {
